@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/scripts/TB01_CIDADES.sql
+  - include:
+      file: db/changelog/seed/SEED_TB01_CIDADES.sql
