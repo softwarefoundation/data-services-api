@@ -3,6 +3,7 @@ package br.com.devchampions.dataservices.cidades.v1;
 
 import br.com.devchampions.dataservices.http.PageableUtil;
 import lombok.AllArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -18,6 +19,7 @@ public class CidadeController {
 
     private CidadeService cidadeService;
 
+    @Cacheable(value = "get_cidadesPorUf")
     @GetMapping("/uf/{uf}")
     public Page<CidadeResponse> cidadesPorUf(@PathVariable String uf,
                                              @PageableDefault(sort = "nome") Pageable pageable) {
