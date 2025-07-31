@@ -29,23 +29,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context:
-          push: true
-          tags: dherkyan/cin-news-links:${{env.time}}
-
-      - name: Checkout no repostiório (argocd-deploy-data-services-api)
-        uses: actions/checkout@v4
-        with:
-          repository: 'softwarefoundation/argocd-deploy-data-services-api-k8s'
-          ssh-key: ${{ secrets.DEPLOY_KEY }}
-
-      - name: Atualizando arquivo de deployment do app (data-services-api)
-        run: |
-          git config user.email dherkyan@gmail.com
-          git config user.name 'Automation Deployment Argo CD'
-          pwd
-          cat k8s/prd/deployment.yaml
-          sed -i "s+dherkyan/data-services-api.*+dherkyan/data-services-api:${{env.time}}+g" k8s/prd/deployment.yaml
-          cat k8s/prd/deployment.yaml
-          git add .
-          git commit -m 'Deploy data-services-api no ambiente PRD versão: data-services-api:${{env.time}}'
-          git push origin main
+          tags: |
+            dherkyan/data-services-api:${{env.time}}
+            dherkyan/data-services-api:latest
