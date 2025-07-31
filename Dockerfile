@@ -6,6 +6,8 @@ WORKDIR $APP_HOME
 
 COPY . .
 
+ARG BUILD_DATE=0.0.0
+RUN sed -i "s/SPRING_APPLICATION_VERSION:1.0.0/SPRING_APPLICATION_VERSION:${BUILD_DATE}/g" src/main/resources/application.yaml
 RUN gradle build -x test
 
 FROM amazoncorretto:24-alpine-jdk as run

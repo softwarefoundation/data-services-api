@@ -1,13 +1,8 @@
 app:
   url:
-    base: ${URL_APP:https://www.dataservicesapi.devchampions.com.br}
+    base: ${URL_APP:https://data-services-api.devchampions.cloud}
     path-wiki: { URL_PATH_WIKI:/wiki }
 spring:
-  data:
-    web:
-      pageable:
-        max-page-size: 50
-        default-page-size: 10
-    rest:
-      max-page-size: 50
-      default-page-size: 10
+  application:
+    name: ${SPRING_APPLICATION_NAME:"Data Services API"}
+    version: ${SPRING_APPLICATION_VERSION:1.0.0}

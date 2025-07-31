@@ -33,3 +33,6 @@ jobs:
           tags: |
             dherkyan/data-services-api:${{env.time}}
             dherkyan/data-services-api:latest
+          build-args: |
+            BUILD_DATE=${{env.time}}
+            VERSION=1.0.0
