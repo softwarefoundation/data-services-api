@@ -1,6 +1,7 @@
 package br.com.devchampions.dataservices.cidades.v1;
 
 
+import br.com.devchampions.dataservices.http.PageableUtil;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -20,8 +21,8 @@ public class CidadeController {
     @GetMapping("/uf/{uf}")
     public Page<CidadeResponse> cidadesPorUf(@PathVariable String uf,
                                              @PageableDefault(sort = "nome") Pageable pageable) {
-        Page<Cidade> cidades = cidadeService.cidadesPorUf(uf, pageable);
 
+        Page<Cidade> cidades = cidadeService.cidadesPorUf(uf, PageableUtil.maxPageSize20(pageable));
         return cidades.map(CidadeResponse::from);
     }
 
