@@ -29,6 +29,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context:
+          push: true
           tags: |
             dherkyan/data-services-api:${{env.time}}
             dherkyan/data-services-api:latest
