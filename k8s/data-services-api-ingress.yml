@@ -1,0 +1,24 @@
+# kubectl apply -f data-services-api-ingress.yml --namespace ingress-nginx
+
+apiVersion: networking.k8s.io/v1
+
+kind: Ingress
+
+metadata:
+  name: data-services-api-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+spec:
+  ingressClassName: nginx
+  rules:
+  - http:
+      paths:
+      - path: /data-services-api(/|$)(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: data-services-api
+            port:
+              number: 80

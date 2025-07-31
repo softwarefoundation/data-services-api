@@ -1,0 +1,21 @@
+# kubectl apply -f data-services-api-ingress-domain.yml --namespace ingress-nginx
+
+apiVersion: networking.k8s.io/v1
+
+kind: Ingress
+
+metadata:
+  name: data-services-api-ingress-domain
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: data-services-api.devchampions.cloud
+    http:
+      paths:
+      - path: "/"
+        pathType: Prefix
+        backend:
+          service:
+            name: data-services-api
+            port:
+              number: 80
