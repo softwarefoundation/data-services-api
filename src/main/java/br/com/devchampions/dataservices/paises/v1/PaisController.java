@@ -17,8 +17,8 @@ public class PaisController {
     private PaisService paisService;
 
     @GetMapping
-    public Page<PaisResponse> buscarPais(PaisSpecification paisSpecification, @PageableDefault(sort = "nome") Pageable pageable) {
-        Page<Pais> paises = paisService.buscarPais(paisSpecification, pageable);
+    public Page<PaisResponse> buscarPaises(PaisSpecification paisSpecification, @PageableDefault(sort = "nome") Pageable pageable) {
+        Page<Pais> paises = paisService.buscarPaises(paisSpecification, pageable);
         return paises.map(PaisResponse::from);
     }
 

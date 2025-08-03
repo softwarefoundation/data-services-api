@@ -14,12 +14,7 @@ public class PaisService {
     private PaisRepository paisRepository;
 
     @Transactional(readOnly = true)
-    public Page<Pais> paises(Pageable pageable) {
-        return paisRepository.findAll(pageable);
-    }
-
-    @Transactional(readOnly = true)
-    public Page<Pais> buscarPais(PaisSpecification paisSpecification, Pageable pageable) {
+    public Page<Pais> buscarPaises(PaisSpecification paisSpecification, Pageable pageable) {
         return paisRepository.findAll(paisSpecification, pageable);
     }
 
