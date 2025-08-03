@@ -2,12 +2,12 @@ package br.com.devchampions.dataservices.paises.v1;
 
 
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @RestController
@@ -17,12 +17,9 @@ public class PaisController {
     private PaisService paisService;
 
     @GetMapping
-    public List<PaisResponse> buscarPais(PaisSpecification paisSpecification) {
-
-
-        List<Pais> paises = paisService.buscarPais(paisSpecification);
-//        return PaisResponse.from(paises);
-        return paises.stream().map(PaisResponse::from).collect(Collectors.toList());
+    public Page<PaisResponse> buscarPais(PaisSpecification paisSpecification, @PageableDefault(sort = "nome") Pageable pageable) {
+        Page<Pais> paises = paisService.buscarPais(paisSpecification, pageable);
+        return paises.map(PaisResponse::from);
     }
 
 
