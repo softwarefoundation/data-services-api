@@ -50,10 +50,8 @@ VALUES ('Alta Floresta D''Oeste', '1100015', 'RO'),
        ('Urupá', '1101708', 'RO'),
        ('Vale do Anari', '1101757', 'RO'),
        ('Vale do Paraíso', '1101807', 'RO'),
-       ('Vilhena', '1100304', 'RO');
-
-INSERT INTO tb01_cidade(nome, codigo_ibge, uf)
-VALUES ('Acrelândia', '1200013', 'AC'),
+       ('Vilhena', '1100304', 'RO'),
+       ('Acrelândia', '1200013', 'AC'),
        ('Assis Brasil', '1200054', 'AC'),
        ('Brasiléia', '1200104', 'AC'),
        ('Bujari', '1200138', 'AC'),
@@ -74,11 +72,8 @@ VALUES ('Acrelândia', '1200013', 'AC'),
        ('Sena Madureira', '1200500', 'AC'),
        ('Senador Guiomard', '1200450', 'AC'),
        ('Tarauacá', '1200609', 'AC'),
-       ('Xapuri', '1200708', 'AC');
-
-
-INSERT INTO tb01_cidade(nome, codigo_ibge, uf)
-VALUES ('Alvarães', '1300029', 'AM'),
+       ('Xapuri', '1200708', 'AC'),
+       ('Alvarães', '1300029', 'AM'),
        ('Amaturá', '1300060', 'AM'),
        ('Anamã', '1300086', 'AM'),
        ('Anori', '1300102', 'AM'),
@@ -139,10 +134,8 @@ VALUES ('Alvarães', '1300029', 'AM'),
        ('Tonantins', '1304237', 'AM'),
        ('Uarini', '1304260', 'AM'),
        ('Urucará', '1304302', 'AM'),
-       ('Urucurituba', '1304401', 'AM');
-
-INSERT INTO tb01_cidade(nome, codigo_ibge, uf)
-VALUES ('Alto Alegre', '1400050', 'RR'),
+       ('Urucurituba', '1304401', 'AM'),
+       ('Alto Alegre', '1400050', 'RR'),
        ('Amajari', '1400027', 'RR'),
        ('Boa Vista', '1400100', 'RR'),
        ('Bonfim', '1400159', 'RR'),
